@@ -1,0 +1,12 @@
+{
+  "extends": "eslint:recommended",
+  "env": { "node": true, "es6": true, "jest": true },
+  "parserOptions": { "ecmaVersion": 9 },
+  "rules": {
+    "comma-dangle": ["warn", "always-multiline"],
+    "no-console": ["off"],
+    "object-curly-spacing": ["warn", "never"],
+    "quotes": ["warn", "single"],
+    "semi": ["warn", "never"]
+  }
+}
