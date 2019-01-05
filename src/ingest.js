@@ -1,19 +1,15 @@
-const program = require('commander')
+const program = require(`commander`)
 
-const config = require('./config')
-const DB = require('./db')
-const {readRecordsFromXdrFile} = require('./har')
-
-const DATA_DIR = config.harRootDir
-const xdrType = 'TransactionHistoryEntry'
-const xdrFile = `${DATA_DIR}/transactions-000e007f.xdr`
+const DB = require(`./db`)
+const HAR = require(`./har`)
 
 program
-  .option('-s, --single [ledger]', 'Import a single ledger')
+  .option(`-s, --single [ledger]`, `Import a single ledger`)
   .option(
-    '-r, --range [range]',
-    'Import a range of ledgers in the form "from:to" (eg. "1:99999")'
+    `-r, --range [range]`,
+    `Import a range of ledgers in the form "from:to" (eg. "1:99999")`
   )
+  .option(`-d, --dryrun`, `Read files but don't insert into the database`)
   .parse(process.argv)
 
 if (!program.single && !program.range) {
@@ -21,26 +17,45 @@ if (!program.single && !program.range) {
   process.exit(-1)
 }
 
+let fromLedger
+let toLedger
+
 if (program.single) {
-  console.log('single ledger import not yet implemented')
-  process.exit(-1)
+  fromLedger = toLedger = program.single
+} else {
+  const rangeRegex = /(\d*):(\d*)/
+  const match = rangeRegex.exec(program.range)
+  if (!match) {
+    program.outputHelp()
+    process.exit(-1)
+  }
+
+  fromLedger = Number(match[1])
+  toLedger = Number(match[2])
+
+  console.log(`Importing ${fromLedger} to ${toLedger} ...\n`)
 }
 
-const rangeRegex = /(\d*):(\d*)/
-const match = rangeRegex.exec(program.range)
-if (!match) {
-  program.outputHelp()
-  process.exit(-1)
+const dryRun = program.dryrun === true
+
+const xdrType = `TransactionHistoryEntry`
+const checkpoints = HAR.checkpointsForRange(fromLedger, toLedger)
+console.log(`Checkpoint ledgers to ingest: ${checkpoints}`)
+
+const har = new HAR()
+
+const main = async () => {
+  const db = await DB.getInstance()
+  return Promise.all(
+    checkpoints.map(checkpointLedger => {
+      const xdrFile = har.toHARFilePath(checkpointLedger)
+      console.log(`reading from ${xdrFile}`)
+      const recs = har.readRecordsFromXdrFile(xdrFile, xdrType)
+      if (!dryRun) {
+        return db.storeRecords(recs).then(() => console.log(`\nFile DONE`))
+      }
+    })
+  ).then(() => db.close())
 }
 
-const fromLedger = match[1]
-const toLedger = match[2]
-console.log(`importing $${fromLedger} to ${toLedger}`)
-
-const recs = readRecordsFromXdrFile(xdrFile, xdrType)
-
-const db = DB.getInstance()
-db.storeRecords(recs).then(() => {
-  console.log('DONE')
-  db.close()
-})
+main().then(() => console.log(`\nALL DONE\n`))

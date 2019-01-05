@@ -6,7 +6,7 @@
     "comma-dangle": ["warn", "always-multiline"],
     "no-console": ["off"],
     "object-curly-spacing": ["warn", "never"],
-    "quotes": ["warn", "single"],
+    "quotes": ["warn", "backtick"],
     "semi": ["warn", "never"]
   }
 }
