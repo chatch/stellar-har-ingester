@@ -1,7 +1,17 @@
 const program = require(`commander`)
+const path = require(`path`)
+const Promise = require(`bluebird`)
 
 const DB = require(`./db`)
 const HAR = require(`./har`)
+
+const ARCHIVE_FILE_TYPES = Object.freeze({
+  bucket: `BucketEntry`,
+  ledger: `LedgerHeaderHistoryEntry`,
+  transactions: `TransactionHistoryEntry`,
+  results: `TransactionHistoryResultEntry`,
+  scp: `ScpHistoryEntry`,
+})
 
 program
   .option(`-s, --single [ledger]`, `Import a single ledger`)
@@ -42,20 +52,54 @@ const xdrType = `TransactionHistoryEntry`
 const checkpoints = HAR.checkpointsForRange(fromLedger, toLedger)
 console.log(`Checkpoint ledgers to ingest: ${checkpoints}`)
 
-const har = new HAR()
+// split into batches to work around memory heap limit in node
+const ledgersPerBatch = 50000
+const ledgersPerCheckpoint = 64
+const batchSize = ledgersPerBatch / ledgersPerCheckpoint
 
-const main = async () => {
-  const db = await DB.getInstance()
-  return Promise.all(
-    checkpoints.map(checkpointLedger => {
-      const xdrFile = har.toHARFilePath(checkpointLedger)
-      console.log(`reading from ${xdrFile}`)
-      const recs = har.readRecordsFromXdrFile(xdrFile, xdrType)
-      if (!dryRun) {
-        return db.storeRecords(recs).then(() => console.log(`\nFile DONE`))
-      }
-    })
-  ).then(() => db.close())
+const checkpointChunks = []
+while (checkpoints.length > 0) {
+  checkpointChunks.push(checkpoints.splice(0, batchSize))
 }
 
-main().then(() => console.log(`\nALL DONE\n`))
+let db
+
+const har = new HAR()
+
+const ingestLedgers = ledgers => {
+  console.log(`ingestLedgers: ${ledgers[0]} to ${ledgers[ledgers.length - 1]}`)
+
+  return db
+    .txBegin()
+    .then(() =>
+      Promise.all(
+        ledgers.map(checkpointLedger => {
+          const xdrFile = har.toHARFilePath(checkpointLedger)
+          console.log(
+            `reading from ${xdrFile
+              .split(path.sep)
+              .slice(-5)
+              .join(path.sep)}`
+          )
+
+          const recs = har.readRecordsFromXdrFile(xdrFile, xdrType)
+          return !dryRun
+            ? db
+                .storeRecords(recs)
+                .then(() => console.log(`\nFile for ${checkpointLedger} DONE`))
+            : Promise.resolve()
+        })
+      )
+    )
+    .then(() => db.txCommit())
+}
+
+const main = () =>
+  DB.getInstance()
+    .then(dbInst => (db = dbInst))
+    .then(() => Promise.each(checkpointChunks, ingestLedgers))
+    .then(() => console.log(`\nALL DONE\n`))
+    .catch(err => console.error(err))
+    .finally(() => db.close())
+
+main()

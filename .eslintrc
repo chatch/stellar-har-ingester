@@ -5,6 +5,7 @@
   "rules": {
     "comma-dangle": ["warn", "always-multiline"],
     "no-console": ["off"],
+    "no-unused-vars": ["warn"],
     "object-curly-spacing": ["warn", "never"],
     "quotes": ["warn", "backtick"],
     "semi": ["warn", "never"]

@@ -24,20 +24,29 @@ class DB {
     this.dbClient.end()
   }
 
-  async storeRecords(records) {
+  txBegin() {
+    return this.dbClient.query(`BEGIN`)
+  }
+
+  txCommit() {
+    return this.dbClient.query(`COMMIT`)
+  }
+
+  txRollback() {
+    return this.dbClient.query(`ROLLBACK`)
+  }
+
+  storeRecords(records) {
     return Promise.all(
-      records.map(record => {
-        const seq = record[`_attributes`].ledgerSeq
-        console.log(`Inserting ${seq}`)
-        return this.dbClient
-          .query(
-            `INSERT INTO transactions (ledger_sequence, data) VALUES ($1, $2)`,
-            [record[`_attributes`].ledgerSeq, record]
-          )
-          .then(() => {}) // console.log(`RES: ${JSON.stringify(res, null, 2)}`))
-          .catch(err => console.error(`${seq} failed: ${err}`))
-      })
-    )
+      records.map(record =>
+        this.dbClient.query(
+          `INSERT INTO transactions (ledger_sequence, data) VALUES ($1, $2)`,
+          [record[`_attributes`].ledgerSeq, record]
+        )
+      )
+    ).catch(err => {
+      console.error(`storeRecords failure: ${err}`)
+    })
   }
 }
 
