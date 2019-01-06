@@ -5,19 +5,15 @@ const Promise = require(`bluebird`)
 const DB = require(`./db`)
 const HAR = require(`./har`)
 
-const ARCHIVE_FILE_TYPES = Object.freeze({
-  bucket: `BucketEntry`,
-  ledger: `LedgerHeaderHistoryEntry`,
-  transactions: `TransactionHistoryEntry`,
-  results: `TransactionHistoryResultEntry`,
-  scp: `ScpHistoryEntry`,
-})
-
 program
   .option(`-s, --single [ledger]`, `Import a single ledger`)
   .option(
     `-r, --range [range]`,
     `Import a range of ledgers in the form "from:to" (eg. "1:99999")`
+  )
+  .option(
+    `-t, --type [type]`,
+    `Ingest only the given type (transactions, ledger)`
   )
   .option(`-d, --dryrun`, `Read files but don't insert into the database`)
   .parse(process.argv)
@@ -27,11 +23,23 @@ if (!program.single && !program.range) {
   process.exit(-1)
 }
 
+let fileTypes
+if (program.type) {
+  if (!HAR.fileTypes[program.type]) {
+    console.log(`File type [${program.type}] not supported`)
+    program.outputHelp()
+    process.exit(-1)
+  }
+  fileTypes = [program.type]
+} else {
+  fileTypes = Object.keys(HAR.fileTypes)
+}
+
 let fromLedger
 let toLedger
 
 if (program.single) {
-  fromLedger = toLedger = program.single
+  fromLedger = toLedger = Number(program.single)
 } else {
   const rangeRegex = /(\d*):(\d*)/
   const match = rangeRegex.exec(program.range)
@@ -42,13 +50,18 @@ if (program.single) {
 
   fromLedger = Number(match[1])
   toLedger = Number(match[2])
-
-  console.log(`Importing ${fromLedger} to ${toLedger} ...\n`)
 }
+
+console.log(
+  `Importing ${fromLedger} to ${toLedger} for types [${fileTypes}] ...\n`
+)
 
 const dryRun = program.dryrun === true
 
-const xdrType = `TransactionHistoryEntry`
+// TODO: ingest all types in list. for now do the first one
+const fileType = fileTypes[0]
+
+const xdrType = HAR.fileTypeToXDRType[fileType]
 const checkpoints = HAR.checkpointsForRange(fromLedger, toLedger)
 console.log(`Checkpoint ledgers to ingest: ${checkpoints}`)
 
@@ -74,7 +87,7 @@ const ingestLedgers = ledgers => {
     .then(() =>
       Promise.all(
         ledgers.map(checkpointLedger => {
-          const xdrFile = har.toHARFilePath(checkpointLedger)
+          const xdrFile = har.toHARFilePath(checkpointLedger, fileType)
           console.log(
             `reading from ${xdrFile
               .split(path.sep)

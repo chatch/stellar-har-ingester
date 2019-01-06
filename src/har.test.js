@@ -33,14 +33,17 @@ test(`checkpointsForRange`, () => {
 
 test(`toHARFilePath`, () => {
   const har = new HAR(`/tmp`)
-  expect(har.toHARFilePath(1000000)).toEqual(
+  expect(har.toHARFilePath(1000000, HAR.fileTypes.transactions)).toEqual(
     `/tmp/transactions/00/0f/42/transactions-000f4240.xdr.gz`
+  )
+  expect(har.toHARFilePath(1000001, HAR.fileTypes.scp)).toEqual(
+    `/tmp/scp/00/0f/42/scp-000f4241.xdr.gz`
   )
 })
 
 test(`readRecordsFromXdrFile`, () => {
   const har = new HAR(TEST_DATA_ROOT)
-  const file = har.toHARFilePath(917567)
+  const file = har.toHARFilePath(917567, HAR.fileTypes.transactions)
   const records = har.readRecordsFromXdrFile(file, `TransactionHistoryEntry`)
   expect(records.length).toEqual(64)
 })

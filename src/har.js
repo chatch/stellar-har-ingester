@@ -6,7 +6,7 @@ const {padStart} = require(`lodash`)
 const SmartBuffer = require(`smart-buffer`).SmartBuffer
 const {xdr} = require(`stellar-base`)
 
-const config = require(`./config`)
+const config = require(`../config`)
 
 const isEndOfBufferError = error =>
   error.message && error.message.indexOf(`beyond the bounds`) !== -1
@@ -73,15 +73,15 @@ class HAR {
     return checkpointHashes
   }
 
-  toHARFilePath(ledgerNum) {
+  toHARFilePath(ledgerNum, fileType) {
     const ledgerHex = HAR.toLedgerHex(ledgerNum)
     return path.join(
       this.rootDir,
-      `transactions`,
+      fileType,
       ledgerHex.slice(0, 2),
       ledgerHex.slice(2, 4),
       ledgerHex.slice(4, 6),
-      `transactions-${ledgerHex}.xdr.gz`
+      `${fileType}-${ledgerHex}.xdr.gz`
     )
   }
 
@@ -115,5 +115,21 @@ class HAR {
     return records
   }
 }
+
+HAR.fileTypes = Object.freeze({
+  bucket: `bucket`,
+  ledger: `ledger`,
+  transactions: `transactions`,
+  results: `results`,
+  scp: `scp`,
+})
+
+HAR.fileTypeToXDRType = Object.freeze({
+  bucket: `BucketEntry`,
+  ledger: `LedgerHeaderHistoryEntry`,
+  transactions: `TransactionHistoryEntry`,
+  results: `TransactionHistoryResultEntry`,
+  scp: `ScpHistoryEntry`,
+})
 
 module.exports = HAR
