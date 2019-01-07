@@ -96,6 +96,8 @@ const ingestLedgers = ledgers => {
           )
 
           const recs = har.readRecordsFromXdrFile(xdrFile, xdrType)
+          console.log(recs)
+
           return !dryRun
             ? db
                 .storeRecords(recs)

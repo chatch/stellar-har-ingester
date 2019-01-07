@@ -1,11 +1,7 @@
-const {readFileSync} = require(`fs`)
 const path = require(`path`)
-const {gunzipSync} = require(`zlib`)
-
 const {padStart} = require(`lodash`)
-const SmartBuffer = require(`smart-buffer`).SmartBuffer
-const {xdr} = require(`stellar-base`)
 
+const {xdrFileToBuffer, xdrToObject} = require(`./xdr`)
 const config = require(`../config`)
 
 const isEndOfBufferError = error =>
@@ -88,10 +84,7 @@ class HAR {
   readRecordsFromXdrFile(xdrFile, xdrType) {
     const records = []
 
-    const xdrZipBuffer = readFileSync(xdrFile)
-    const xdrBuffer = gunzipSync(xdrZipBuffer)
-    const inBuffer = SmartBuffer.fromBuffer(xdrBuffer)
-
+    const inBuffer = xdrFileToBuffer(xdrFile)
     let finished = false
 
     while (!finished) {
@@ -100,16 +93,7 @@ class HAR {
         finished = true
         continue
       }
-
-      let record
-      try {
-        record = xdr[xdrType].fromXDR(recordBuffer, `raw`)
-      } catch (error) {
-        console.error(error)
-        throw new Error(`Input XDR could not be parsed`)
-      }
-
-      records.push(record)
+      records.push(xdrToObject(recordBuffer, xdrType))
     }
 
     return records

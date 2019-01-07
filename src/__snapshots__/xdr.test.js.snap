@@ -1,0 +1,3290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`xdrToObject ledger 1`] = `
+"{
+  \\"hash\\": \\"665bf4f20ea79d7a75ef3c0609edc6d3bb188e41b2b1693d4d74933e4528c64d\\",
+  \\"header\\": {
+    \\"ledgerVersion\\": 10,
+    \\"previousLedgerHash\\": \\"15fc6f2df27ddde13a355eb7d4a17afce08279eb050478fef98727b71ea95a07\\",
+    \\"scpValue\\": {
+      \\"txSetHash\\": \\"24b47882ccfe8794961be57d6a520b35137f9f727d5a92f1d0a77e0f71e33931\\",
+      \\"closeTime\\": {
+        \\"low\\": 1544073495,
+        \\"high\\": 0,
+        \\"unsigned\\": true
+      },
+      \\"upgrades\\": [],
+      \\"ext\\": {
+        \\"_switch\\": 0,
+        \\"_arm\\": {},
+        \\"_armType\\": {}
+      }
+    },
+    \\"txSetResultHash\\": {
+      \\"type\\": \\"Buffer\\",
+      \\"data\\": [
+        116,
+        122,
+        176,
+        253,
+        75,
+        160,
+        44,
+        174,
+        118,
+        41,
+        80,
+        136,
+        16,
+        213,
+        192,
+        125,
+        45,
+        72,
+        106,
+        20,
+        112,
+        145,
+        103,
+        250,
+        26,
+        221,
+        157,
+        14,
+        177,
+        216,
+        15,
+        97
+      ]
+    },
+    \\"bucketListHash\\": {
+      \\"type\\": \\"Buffer\\",
+      \\"data\\": [
+        185,
+        168,
+        242,
+        224,
+        21,
+        203,
+        193,
+        25,
+        77,
+        98,
+        47,
+        20,
+        243,
+        10,
+        140,
+        2,
+        236,
+        128,
+        214,
+        144,
+        234,
+        16,
+        201,
+        39,
+        168,
+        22,
+        7,
+        212,
+        192,
+        250,
+        71,
+        209
+      ]
+    },
+    \\"ledgerSeq\\": 1048512,
+    \\"totalCoins\\": {
+      \\"low\\": -551664198,
+      \\"high\\": 233764943,
+      \\"unsigned\\": false
+    },
+    \\"feePool\\": {
+      \\"low\\": -743539630,
+      \\"high\\": 934300,
+      \\"unsigned\\": false
+    },
+    \\"inflationSeq\\": 21,
+    \\"idPool\\": {
+      \\"low\\": 431196,
+      \\"high\\": 0,
+      \\"unsigned\\": true
+    },
+    \\"baseFee\\": 100,
+    \\"baseReserve\\": 5000000,
+    \\"maxTxSetSize\\": 100,
+    \\"skipList\\": [
+      {
+        \\"type\\": \\"Buffer\\",
+        \\"data\\": [
+          214,
+          42,
+          88,
+          114,
+          42,
+          204,
+          245,
+          136,
+          70,
+          33,
+          49,
+          191,
+          239,
+          206,
+          207,
+          179,
+          163,
+          66,
+          14,
+          16,
+          2,
+          67,
+          95,
+          131,
+          75,
+          208,
+          36,
+          133,
+          107,
+          225,
+          227,
+          121
+        ]
+      },
+      {
+        \\"type\\": \\"Buffer\\",
+        \\"data\\": [
+          187,
+          33,
+          33,
+          40,
+          148,
+          32,
+          92,
+          52,
+          21,
+          246,
+          18,
+          30,
+          54,
+          38,
+          37,
+          249,
+          25,
+          36,
+          150,
+          144,
+          25,
+          28,
+          151,
+          176,
+          136,
+          23,
+          129,
+          49,
+          226,
+          215,
+          27,
+          219
+        ]
+      },
+      {
+        \\"type\\": \\"Buffer\\",
+        \\"data\\": [
+          247,
+          36,
+          102,
+          14,
+          108,
+          221,
+          251,
+          96,
+          110,
+          192,
+          80,
+          108,
+          143,
+          49,
+          93,
+          10,
+          186,
+          40,
+          10,
+          69,
+          2,
+          71,
+          232,
+          64,
+          43,
+          109,
+          129,
+          105,
+          162,
+          193,
+          239,
+          231
+        ]
+      },
+      {
+        \\"type\\": \\"Buffer\\",
+        \\"data\\": [
+          12,
+          27,
+          198,
+          231,
+          73,
+          52,
+          84,
+          94,
+          46,
+          171,
+          234,
+          68,
+          229,
+          147,
+          149,
+          130,
+          191,
+          176,
+          227,
+          50,
+          140,
+          25,
+          202,
+          36,
+          121,
+          215,
+          88,
+          167,
+          114,
+          114,
+          128,
+          177
+        ]
+      }
+    ],
+    \\"ext\\": {
+      \\"_switch\\": 0,
+      \\"_arm\\": {},
+      \\"_armType\\": {}
+    }
+  },
+  \\"ext\\": {
+    \\"_switch\\": 0,
+    \\"_arm\\": {},
+    \\"_armType\\": {}
+  }
+}"
+`;
+
+exports[`xdrToObject transactions 1`] = `
+"{
+  \\"ledgerSeq\\": 21833152,
+  \\"txSet\\": {
+    \\"previousLedgerHash\\": \\"dd6a5afe5d605cf2fabb02381f51d59c565b9906fe8b80cf855c7543ade14345\\",
+    \\"txes\\": [
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GA2Z7ICAY5RNQSWBEHV2KHVCMOBTXWUFXGDYWZUJZA3ZV4KOFUVGKSCN\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 1530,
+            \\"high\\": 20587688,
+            \\"unsigned\\": false
+          },
+          \\"memo\\": {
+            \\"type\\": \\"memoText\\",
+            \\"value\\": \\"SCN - Social Point\\"
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"payment\\",
+                  \\"value\\": 1
+                },
+                \\"_arm\\": \\"paymentOp\\",
+                \\"_value\\": {
+                  \\"destination\\": \\"GBSHE2OSYS4Y4X74RGQLV75PGOTS7FJYO7FE3RJJ3JTXRULLJABA3X2J\\",
+                  \\"asset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          67,
+                          78,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GAVAR4DWFKNPXZNNFW6Y4CLU6SIXNWHBPKHSYWH5O6V4NVLOLFVBOMCE\\"
+                    }
+                  },
+                  \\"amount\\": \\"70000000\\"
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                78,
+                45,
+                42,
+                101
+              ]
+            },
+            \\"signature\\": \\"bH4RcA75LoMFIGdXCpp4fX1UQall8oD1YUZYW0AtPXENOdsXEMmAl6u1/fpee2guc/XorC1NDtP83H+E9JjhCQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GCFHNIB4FFLZJ2IKGXB5KEE32H5DDN37ZLVWBYLFWECSEXMUWSF3LDDO\\",
+          \\"fee\\": 102,
+          \\"seqNum\\": {
+            \\"low\\": 21041,
+            \\"high\\": 20757051,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"sourceAccount\\": \\"GA2NRFVUZE7TFSFMTE6JSP4DCCOXFJF5477G5LZYI6NZLCAY5KKPEQTK\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"pathPayment\\",
+                  \\"value\\": 2
+                },
+                \\"_arm\\": \\"pathPaymentOp\\",
+                \\"_value\\": {
+                  \\"sendAsset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"sendMax\\": \\"180000000\\",
+                  \\"destination\\": \\"GA2NRFVUZE7TFSFMTE6JSP4DCCOXFJF5477G5LZYI6NZLCAY5KKPEQTK\\",
+                  \\"destAsset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"destAmount\\": \\"180000000\\",
+                  \\"path\\": [
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            85,
+                            83,
+                            68,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GBSTRUSD7IRX73RQZBL3RQUH6KS3O4NYFY3QCALDLZD77XMZOPWAVTUK\\"
+                      }
+                    },
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            76,
+                            84,
+                            67,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GCSTRLTC73UVXIYPHYTTQUUSDTQU2KQW5VKCE4YCMEHWF44JKDMQAL23\\"
+                      }
+                    },
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            69,
+                            84,
+                            72,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GBSTRH4QOTWNSVA6E4HFERETX4ZLSR3CIUBLK7AXYII277PFJC4BBYOG\\"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                24,
+                234,
+                148,
+                242
+              ]
+            },
+            \\"signature\\": \\"mMra1ROOXuArsJnKpkWuvwiglF4IO90OgWUA3u/1NHRZfBTJm7KFRo2x8+JClTEzvhLX2TvK816RHaEnB32yBQ==\\"
+          },
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                148,
+                180,
+                139,
+                181
+              ]
+            },
+            \\"signature\\": \\"+quzENplQ4IgVMZ1sbmZvc3MyLbHDwRX/d0TRMOq51YBTgfY/Osi29Nhw8XTGBN6tyqck/J3vjDArG0zebe9Bg==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GAWHBAUJPCKQTEVOXKDELSG5F6KSDYNB5EC27NO2OQKS6RVPGU5URCGD\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 26,
+            \\"high\\": 19421708,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"accountMerge\\",
+                  \\"value\\": 8
+                },
+                \\"_arm\\": \\"destination\\",
+                \\"_value\\": \\"GDVGJVII36PKGWBLSHJVI4UFSURCGG53E3M4AIYTIA3CGQJ7VT3KRO3O\\"
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                175,
+                53,
+                59,
+                72
+              ]
+            },
+            \\"signature\\": \\"zZEOdYgEgreGfFs2OSyXzt2Mh1+pRorCTn5F5vot54dYoHbvgR5uakt7L4ffQ2geuk6WRb5vg+KILltDJ7DxCQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GCUZSLQYXDXSOXC4DURSK3AJNAQEBDSYVGYE7BC7IXGTS32MJBW35QOU\\",
+          \\"fee\\": 500,
+          \\"seqNum\\": {
+            \\"low\\": 150223,
+            \\"high\\": 16754581,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          69,
+                          84,
+                          72,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P\\"
+                    }
+                  },
+                  \\"amount\\": \\"4388354538\\",
+                  \\"price\\": {
+                    \\"n\\": 729027,
+                    \\"d\\": 1000000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 56633368,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          69,
+                          84,
+                          72,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P\\"
+                    }
+                  },
+                  \\"amount\\": \\"4388354538\\",
+                  \\"price\\": {
+                    \\"n\\": 148707,
+                    \\"d\\": 200000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 56752942,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          69,
+                          84,
+                          72,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P\\"
+                    }
+                  },
+                  \\"amount\\": \\"4388354538\\",
+                  \\"price\\": {
+                    \\"n\\": 758043,
+                    \\"d\\": 1000000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57145686,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          69,
+                          84,
+                          72,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P\\"
+                    }
+                  },
+                  \\"amount\\": \\"4388354538\\",
+                  \\"price\\": {
+                    \\"n\\": 772551,
+                    \\"d\\": 1000000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57148026,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          69,
+                          84,
+                          72,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GCNSGHUCG5VMGLT5RIYYZSO7VQULQKAJ62QA33DBC5PPBSO57LFWVV6P\\"
+                    }
+                  },
+                  \\"amount\\": \\"4388354538\\",
+                  \\"price\\": {
+                    \\"n\\": 787059,
+                    \\"d\\": 1000000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57254188,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                76,
+                72,
+                109,
+                190
+              ]
+            },
+            \\"signature\\": \\"ZLufht/Y5cRmkdrhR9pgY/jeV92oeeRS8vvUehjNjcaMhiSoJVNAXeIN4JDV92shIdfwLw7UuykjrMgz4iqICg==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GASUXYNNN7OWDOJUKPN6RFFHWMNBHYI23NVLEEZ5LGVY5O6ZLCKWUA35\\",
+          \\"fee\\": 110,
+          \\"seqNum\\": {
+            \\"low\\": 5742,
+            \\"high\\": 20400431,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"sourceAccount\\": \\"GA2NRVZVL5OTPEVC52PGVIMU7QXE7E6TYRTBLCG4MQN37FJIFFRBJKQ2\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"pathPayment\\",
+                  \\"value\\": 2
+                },
+                \\"_arm\\": \\"pathPaymentOp\\",
+                \\"_value\\": {
+                  \\"sendAsset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"sendMax\\": \\"179990000\\",
+                  \\"destination\\": \\"GA2NRVZVL5OTPEVC52PGVIMU7QXE7E6TYRTBLCG4MQN37FJIFFRBJKQ2\\",
+                  \\"destAsset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"destAmount\\": \\"179990000\\",
+                  \\"path\\": [
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            85,
+                            83,
+                            68,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GBSTRUSD7IRX73RQZBL3RQUH6KS3O4NYFY3QCALDLZD77XMZOPWAVTUK\\"
+                      }
+                    },
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            76,
+                            84,
+                            67,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GCSTRLTC73UVXIYPHYTTQUUSDTQU2KQW5VKCE4YCMEHWF44JKDMQAL23\\"
+                      }
+                    },
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            69,
+                            84,
+                            72,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GBSTRH4QOTWNSVA6E4HFERETX4ZLSR3CIUBLK7AXYII277PFJC4BBYOG\\"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                40,
+                41,
+                98,
+                20
+              ]
+            },
+            \\"signature\\": \\"ORCBTtl6VApXPA9sRlNSZP7ils7mhvISvwd5fZ6XXA7WCw3BIOaUNZ4oKlC+7clyb7Wy70Yw9dYzAWGD5EKsAA==\\"
+          },
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                217,
+                88,
+                149,
+                106
+              ]
+            },
+            \\"signature\\": \\"w00ac/00RvYz9l9brwz085W1IuzDNPZQQxDz3nLsGzRcxLt1Q5cZZot6VnsT+RoHZpLaJRTLj3funhaj/Ih7Bg==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GBE3BRNRC6JVRJ7I4FFVOSPJNKOJ3ZE7E3GLIHUGUGRPNSVRK4GPCEFW\\",
+          \\"fee\\": 2000,
+          \\"seqNum\\": {
+            \\"low\\": 1989,
+            \\"high\\": 21802291,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"283976131\\",
+                  \\"price\\": {
+                    \\"n\\": 205532947,
+                    \\"d\\": 5000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57409325,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"1223269543\\",
+                  \\"price\\": {
+                    \\"n\\": 103037547,
+                    \\"d\\": 2500000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57409326,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"643514899\\",
+                  \\"price\\": {
+                    \\"n\\": 51910299,
+                    \\"d\\": 1250000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57409327,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"140915146\\",
+                  \\"price\\": {
+                    \\"n\\": 83429973,
+                    \\"d\\": 2000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57409470,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"1391351607\\",
+                  \\"price\\": {
+                    \\"n\\": 43104563,
+                    \\"d\\": 1000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57433383,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"1497723194\\",
+                  \\"price\\": {
+                    \\"n\\": 27048783,
+                    \\"d\\": 625000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57442135,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"288640695\\",
+                  \\"price\\": {
+                    \\"n\\": 3493343,
+                    \\"d\\": 80000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57442136,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"311489249\\",
+                  \\"price\\": {
+                    \\"n\\": 22382581,
+                    \\"d\\": 500000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57442137,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"82028434\\",
+                  \\"price\\": {
+                    \\"n\\": 143502,
+                    \\"d\\": 3125
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57450349,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"amount\\": \\"4340962\\",
+                  \\"price\\": {
+                    \\"n\\": 115467041,
+                    \\"d\\": 2500000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57450350,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"66746400728\\",
+                  \\"price\\": {
+                    \\"n\\": 29733,
+                    \\"d\\": 1000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57318557,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"29416108788\\",
+                  \\"price\\": {
+                    \\"n\\": 299209,
+                    \\"d\\": 10000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57318558,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"39423647566\\",
+                  \\"price\\": {
+                    \\"n\\": 37443,
+                    \\"d\\": 1250000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57318559,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"10342082131\\",
+                  \\"price\\": {
+                    \\"n\\": 303299,
+                    \\"d\\": 10000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57318560,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"11058519099\\",
+                  \\"price\\": {
+                    \\"n\\": 304521,
+                    \\"d\\": 10000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57318561,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"12697983987\\",
+                  \\"price\\": {
+                    \\"n\\": 152629,
+                    \\"d\\": 5000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57318562,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"8025382378\\",
+                  \\"price\\": {
+                    \\"n\\": 153577,
+                    \\"d\\": 5000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57318563,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"12506504709\\",
+                  \\"price\\": {
+                    \\"n\\": 308353,
+                    \\"d\\": 10000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57318564,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"44142302085\\",
+                  \\"price\\": {
+                    \\"n\\": 309799,
+                    \\"d\\": 10000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57370625,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GAGA7RRXJ3PBP2COTU7O5FMNDDZUXWVO7RWYWR2XODEAZVRJAWZEYMQ4\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          83,
+                          72,
+                          88,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSTRSHXHGJ7ZIVRBXEYE5Q74XUVCUSEKEBR7UCHEUUEK72N7I7KJ6JH\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"15641068530\\",
+                  \\"price\\": {
+                    \\"n\\": 317547,
+                    \\"d\\": 10000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57370812,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                177,
+                87,
+                12,
+                241
+              ]
+            },
+            \\"signature\\": \\"SWCEGI0tSIpxPAecVp9IKDEDtf3p7PZ4TidN8afs7yBRYRLmAVS6LT4kPwz9KeAt4LyLfE532wDHCj/eQxHlCQ==\\"
+          },
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                41,
+                5,
+                178,
+                76
+              ]
+            },
+            \\"signature\\": \\"EmUjDltwPbTP8LeqguJUGp7g32xV/MU+cdidgmmdZKDhvMxc5DOr6GdrHrWDnuYx9vAmapK6r4wIy1s+AO2IAg==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GAUZUMXGJNPAWPSDUPFWCXA2HHCCG7B5J6IMY2Y5SBRGE6WGP52S3PJF\\",
+          \\"fee\\": 102,
+          \\"seqNum\\": {
+            \\"low\\": 21066,
+            \\"high\\": 20757052,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"sourceAccount\\": \\"GDZTDLIDOH3WMWSF7MK4OBLPHDUWGQ5QB4WPRRJC2A7DW6R62RR64HJZ\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"pathPayment\\",
+                  \\"value\\": 2
+                },
+                \\"_arm\\": \\"pathPaymentOp\\",
+                \\"_value\\": {
+                  \\"sendAsset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          69,
+                          84,
+                          72,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GBSTRH4QOTWNSVA6E4HFERETX4ZLSR3CIUBLK7AXYII277PFJC4BBYOG\\"
+                    }
+                  },
+                  \\"sendMax\\": \\"130920\\",
+                  \\"destination\\": \\"GDZTDLIDOH3WMWSF7MK4OBLPHDUWGQ5QB4WPRRJC2A7DW6R62RR64HJZ\\",
+                  \\"destAsset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          69,
+                          84,
+                          72,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GBSTRH4QOTWNSVA6E4HFERETX4ZLSR3CIUBLK7AXYII277PFJC4BBYOG\\"
+                    }
+                  },
+                  \\"destAmount\\": \\"130920\\",
+                  \\"path\\": [
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeNative\\",
+                        \\"value\\": 0
+                      },
+                      \\"_arm\\": {},
+                      \\"_armType\\": {}
+                    },
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            85,
+                            83,
+                            68,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GBSTRUSD7IRX73RQZBL3RQUH6KS3O4NYFY3QCALDLZD77XMZOPWAVTUK\\"
+                      }
+                    },
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            76,
+                            84,
+                            67,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GCSTRLTC73UVXIYPHYTTQUUSDTQU2KQW5VKCE4YCMEHWF44JKDMQAL23\\"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                62,
+                212,
+                99,
+                238
+              ]
+            },
+            \\"signature\\": \\"1QB6lsTDbis37AB5ytveY7Gu09ZGyTtvM1gxyyulXQNbHfR17qCA9F+9fIkq6dp3F6TNSrCo28HAiubItEOGDQ==\\"
+          },
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                198,
+                127,
+                117,
+                45
+              ]
+            },
+            \\"signature\\": \\"mvi8uBXcVwGQU2loDXsxFv7BC0eLyMzCIUgTMsWAB41/wyYg9ckLCfTlQbG09wMtozeqUnUjWf69Cs3Aq03dAw==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GDDHQ3GAPO74A6V3OD4ANJDRYXNXIEWASDVKHNU22RM57Z2INWFETG4T\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 12,
+            \\"high\\": 19685343,
+            \\"unsigned\\": false
+          },
+          \\"memo\\": {
+            \\"type\\": \\"memoText\\",
+            \\"value\\": \\"stellar-lover\\"
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"payment\\",
+                  \\"value\\": 1
+                },
+                \\"_arm\\": \\"paymentOp\\",
+                \\"_value\\": {
+                  \\"destination\\": \\"GDG6OZCS4AKJQOQHYDESZPUICLSWQJ2HKEA5VW4GV2MIWTL75TKWPAUS\\",
+                  \\"asset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          68,
+                          82,
+                          65,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GCJKSAQECBGSLPQWAU7ME4LVQVZ6IDCNUA5NVTPPCUWZWBN5UBFMXZ53\\"
+                    }
+                  },
+                  \\"amount\\": \\"102801000\\"
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                72,
+                109,
+                138,
+                73
+              ]
+            },
+            \\"signature\\": \\"SshnxoyEsx9BmRpZAxXOFmAyzOwxS966k6BZQTKYjZq4kDiS9e8mp1pk3nCdEm5rZ3yBNuSD8KkQE/J8UjQzBQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GCWOFVKKILQWOX2OA7YFKEKSQX5B3NY5USOHSZZ4FBNYJUC5RBCJAUM5\\",
+          \\"fee\\": 102,
+          \\"seqNum\\": {
+            \\"low\\": 21036,
+            \\"high\\": 20757053,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"sourceAccount\\": \\"GDZTDLIDOH3WMWSF7MK4OBLPHDUWGQ5QB4WPRRJC2A7DW6R62RR64HJZ\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"pathPayment\\",
+                  \\"value\\": 2
+                },
+                \\"_arm\\": \\"pathPaymentOp\\",
+                \\"_value\\": {
+                  \\"sendAsset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          76,
+                          84,
+                          67,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GCSTRLTC73UVXIYPHYTTQUUSDTQU2KQW5VKCE4YCMEHWF44JKDMQAL23\\"
+                    }
+                  },
+                  \\"sendMax\\": \\"582700\\",
+                  \\"destination\\": \\"GDZTDLIDOH3WMWSF7MK4OBLPHDUWGQ5QB4WPRRJC2A7DW6R62RR64HJZ\\",
+                  \\"destAsset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          76,
+                          84,
+                          67,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GCSTRLTC73UVXIYPHYTTQUUSDTQU2KQW5VKCE4YCMEHWF44JKDMQAL23\\"
+                    }
+                  },
+                  \\"destAmount\\": \\"582700\\",
+                  \\"path\\": [
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            69,
+                            84,
+                            72,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GBSTRH4QOTWNSVA6E4HFERETX4ZLSR3CIUBLK7AXYII277PFJC4BBYOG\\"
+                      }
+                    },
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeNative\\",
+                        \\"value\\": 0
+                      },
+                      \\"_arm\\": {},
+                      \\"_armType\\": {}
+                    },
+                    {
+                      \\"_switch\\": {
+                        \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                        \\"value\\": 1
+                      },
+                      \\"_arm\\": \\"alphaNum4\\",
+                      \\"_value\\": {
+                        \\"assetCode\\": {
+                          \\"type\\": \\"Buffer\\",
+                          \\"data\\": [
+                            85,
+                            83,
+                            68,
+                            0
+                          ]
+                        },
+                        \\"issuer\\": \\"GBSTRUSD7IRX73RQZBL3RQUH6KS3O4NYFY3QCALDLZD77XMZOPWAVTUK\\"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                62,
+                212,
+                99,
+                238
+              ]
+            },
+            \\"signature\\": \\"H1HXOqbRrTe1uJEIsZoFIs4/0xNrCij5GbIuLQlYE5wrRU8ihDo+GKCMDVL25GbrSpRW8hhmmPYHk/UoAJpLDg==\\"
+          },
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                93,
+                136,
+                68,
+                144
+              ]
+            },
+            \\"signature\\": \\"2SI5gM01QrbOOes7MBiH2XB8PxOvS4Os8jMNCWaAuTn4M0koDpnZvFOz06HM3w7E3xcm8nlguAnM9kE9fTp/Dg==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GC5UV6QDO25ZWRW7DQ4OTFFIITJAAGDMHRLXPJRFT7ZVE4USPHSIUNF2\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 1424337,
+            \\"high\\": 19404372,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          71,
+                          84,
+                          78,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GARFMAHQM4JDI55SK2FGEPLOZU7BTEODS3Y5QNT3VMQQIU3WV2HTBA46\\"
+                    }
+                  },
+                  \\"amount\\": \\"2932589649\\",
+                  \\"price\\": {
+                    \\"n\\": 1887291,
+                    \\"d\\": 5000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 0,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                146,
+                121,
+                228,
+                138
+              ]
+            },
+            \\"signature\\": \\"CGRnYIQZOkwh6DOLG+TFX9sNecNaR6tpxU25Rxn3SqgHUDxm4MDclHk0zWTt4BxXepR+HWEqRkq7m4Nq893dAA==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GCDUYF4UG224OVOHC2FC4EAAVWK57GQE7EQL45NGUPCECWPDM6GIVH44\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 89636,
+            \\"high\\": 16920269,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          71,
+                          84,
+                          78,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GARFMAHQM4JDI55SK2FGEPLOZU7BTEODS3Y5QNT3VMQQIU3WV2HTBA46\\"
+                    }
+                  },
+                  \\"amount\\": \\"0\\",
+                  \\"price\\": {
+                    \\"n\\": 20311133,
+                    \\"d\\": 53808463
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57451863,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                227,
+                103,
+                140,
+                138
+              ]
+            },
+            \\"signature\\": \\"KqPxo6b1ehXUs61BpNQAMwomu1m/NR9iilLeFiQUQtu3lSazG8Xbgh4G9lOMc9fHGnhNeO4DpqNNeT75NQD8CQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GAMEGWRC4XNPUWIKP5R4XR2JYD3PFTAC24HDMTFTZON23TKNUV72EP7N\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 9010,
+            \\"high\\": 6249552,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"payment\\",
+                  \\"value\\": 1
+                },
+                \\"_arm\\": \\"paymentOp\\",
+                \\"_value\\": {
+                  \\"destination\\": \\"GA7N4K45ILJUHYLYYAT7ZAZDX673PSZHUM2JY4ZNVHGJJPWUZGCADCZD\\",
+                  \\"asset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"800000\\"
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                77,
+                165,
+                127,
+                162
+              ]
+            },
+            \\"signature\\": \\"iFw5LnwU+wOZ5qabc9+ePsYbKx9fHFq+hyeTBIut9jlK7AOXPT9JNErpg9osUcE0QyG9Z/x4ZzYpcR2LsLq4CQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GDPZOHEEUEYNFCNSHTYJCKEN25ZKV4FAB25D2XYFBV7LXPAI6G3PFGCE\\",
+          \\"fee\\": 400,
+          \\"seqNum\\": {
+            \\"low\\": 102902,
+            \\"high\\": 19384874,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          67,
+                          78,
+                          89,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX\\"
+                    }
+                  },
+                  \\"amount\\": \\"0\\",
+                  \\"price\\": {
+                    \\"n\\": 787157,
+                    \\"d\\": 1000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57451684,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          67,
+                          78,
+                          89,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"0\\",
+                  \\"price\\": {
+                    \\"n\\": 12897407,
+                    \\"d\\": 10000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57451685,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          67,
+                          78,
+                          89,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX\\"
+                    }
+                  },
+                  \\"amount\\": \\"42990052584\\",
+                  \\"price\\": {
+                    \\"n\\": 3931949,
+                    \\"d\\": 5000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 0,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          67,
+                          78,
+                          89,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GAREELUB43IRHWEASCFBLKHURCGMHE5IF6XSE7EXDLACYHGRHM43RFOX\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"50000000000\\",
+                  \\"price\\": {
+                    \\"n\\": 12909989,
+                    \\"d\\": 10000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 0,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                8,
+                241,
+                182,
+                242
+              ]
+            },
+            \\"signature\\": \\"+J/BRUz+5UVLT22qKPx0HRDizbkZg92nv612TF0zCLcaE6SNBXUhI7Oy1BQW4TFIAnTyWYqIEBC+38eJY5r0BQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GAOVLZQ6YVJMIE46EAA2ZAYUU6S3ETKHDDFASFINH4YLWUZKXAUBYBB2\\",
+          \\"fee\\": 300,
+          \\"seqNum\\": {
+            \\"low\\": 3350443,
+            \\"high\\": 18121916,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          66,
+                          67,
+                          78,
+                          89
+                        ]
+                      },
+                      \\"issuer\\": \\"GBCNYBHAAPDSU3UIHXXQTHYZVSBJBI4YUNWXMKJBCPDHTVYR75G6NFHD\\"
+                    }
+                  },
+                  \\"amount\\": \\"2992260000\\",
+                  \\"price\\": {
+                    \\"n\\": 392249,
+                    \\"d\\": 500000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 57451822,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          66,
+                          67,
+                          78,
+                          89
+                        ]
+                      },
+                      \\"issuer\\": \\"GBCNYBHAAPDSU3UIHXXQTHYZVSBJBI4YUNWXMKJBCPDHTVYR75G6NFHD\\"
+                    }
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"amount\\": \\"152350000\\",
+                  \\"price\\": {
+                    \\"n\\": 1312803,
+                    \\"d\\": 1000000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 0,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            },
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"manageOffer\\",
+                  \\"value\\": 3
+                },
+                \\"_arm\\": \\"manageOfferOp\\",
+                \\"_value\\": {
+                  \\"selling\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeNative\\",
+                      \\"value\\": 0
+                    },
+                    \\"_arm\\": {},
+                    \\"_armType\\": {}
+                  },
+                  \\"buying\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          66,
+                          67,
+                          78,
+                          89
+                        ]
+                      },
+                      \\"issuer\\": \\"GBCNYBHAAPDSU3UIHXXQTHYZVSBJBI4YUNWXMKJBCPDHTVYR75G6NFHD\\"
+                    }
+                  },
+                  \\"amount\\": \\"10000000000\\",
+                  \\"price\\": {
+                    \\"n\\": 157291,
+                    \\"d\\": 200000
+                  },
+                  \\"offerId\\": {
+                    \\"low\\": 0,
+                    \\"high\\": 0,
+                    \\"unsigned\\": true
+                  }
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                42,
+                184,
+                40,
+                28
+              ]
+            },
+            \\"signature\\": \\"tzhDn/dPmOyJQa2UUKwnHkMoiauO5ZWU7bG7p5Wm+kyYOLgvHJqUHKzb0mSnyTuCba4gp2UmfB/0WqJqU78ZDQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GCM5DI6NHOQZIS45VVCWR3J4KMU4HJ7WKQWO35XRDDVXQEFT2RJD5TYQ\\",
+          \\"fee\\": 400,
+          \\"seqNum\\": {
+            \\"low\\": 3,
+            \\"high\\": 21141553,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"sourceAccount\\": \\"GCM5DI6NHOQZIS45VVCWR3J4KMU4HJ7WKQWO35XRDDVXQEFT2RJD5TYQ\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"changeTrust\\",
+                  \\"value\\": 6
+                },
+                \\"_arm\\": \\"changeTrustOp\\",
+                \\"_value\\": {
+                  \\"line\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          66,
+                          84,
+                          67,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GAUTUYY2THLF7SGITDFMXJVYH3LHDSMGEAKSBU267M2K7A3W543CKUEF\\"
+                    }
+                  },
+                  \\"limit\\": \\"21474836470000000\\"
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GCM5DI6NHOQZIS45VVCWR3J4KMU4HJ7WKQWO35XRDDVXQEFT2RJD5TYQ\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"changeTrust\\",
+                  \\"value\\": 6
+                },
+                \\"_arm\\": \\"changeTrustOp\\",
+                \\"_value\\": {
+                  \\"line\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          69,
+                          84,
+                          72,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GBDEVU63Y6NTHJQQZIKVTC23NWLQVP3WJ2RI2OTSJTNYOIGICST6DUXR\\"
+                    }
+                  },
+                  \\"limit\\": \\"21474836470000000\\"
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GCM5DI6NHOQZIS45VVCWR3J4KMU4HJ7WKQWO35XRDDVXQEFT2RJD5TYQ\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"changeTrust\\",
+                  \\"value\\": 6
+                },
+                \\"_arm\\": \\"changeTrustOp\\",
+                \\"_value\\": {
+                  \\"line\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          66,
+                          67,
+                          72,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GAEGOS7I6TYZSVHPSN76RSPIVL3SELATXZWLFO4DIAFYJF7MPAHFE7H4\\"
+                    }
+                  },
+                  \\"limit\\": \\"21474836470000000\\"
+                }
+              }
+            },
+            {
+              \\"sourceAccount\\": \\"GCM5DI6NHOQZIS45VVCWR3J4KMU4HJ7WKQWO35XRDDVXQEFT2RJD5TYQ\\",
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"changeTrust\\",
+                  \\"value\\": 6
+                },
+                \\"_arm\\": \\"changeTrustOp\\",
+                \\"_value\\": {
+                  \\"line\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          66,
+                          83,
+                          86,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GDSVWEA7XV6M5XNLODVTPCGMAJTNBLZBXOFNQD3BNPNYALEYBNT6CE2V\\"
+                    }
+                  },
+                  \\"limit\\": \\"21474836470000000\\"
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                179,
+                212,
+                82,
+                62
+              ]
+            },
+            \\"signature\\": \\"/T5Hfhq87TqVoeoJO5Q/CZNdEymV69EbdWzsUSzDhtJF0SfMQUBbC51ZVCzXiTpjcv24fptAsQ9cM1gvyq9oBQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GDT7XILVA2L6GFSAQB2Y2W4IKHJHWZHATBPVBLM6H3LQMRRZQEKFB3LM\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 79,
+            \\"high\\": 18646210,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"accountMerge\\",
+                  \\"value\\": 8
+                },
+                \\"_arm\\": \\"destination\\",
+                \\"_value\\": \\"GDVGJVII36PKGWBLSHJVI4UFSURCGG53E3M4AIYTIA3CGQJ7VT3KRO3O\\"
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                57,
+                129,
+                20,
+                80
+              ]
+            },
+            \\"signature\\": \\"+yXx55U0uL5mMOufmTO8l3U5Pw11L4cK1zbEFq1BEj09lup7VhZwtVtN7b3oFDQFByBNYNDhd/qblkWEaJ9OBQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GD6A3VMB3LVTK6B7HQT36EAX3EGHRWFX3JPWHJ7ZJ3KZZ6KHUPU2RLB3\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 8006,
+            \\"high\\": 19958051,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"payment\\",
+                  \\"value\\": 1
+                },
+                \\"_arm\\": \\"paymentOp\\",
+                \\"_value\\": {
+                  \\"destination\\": \\"GCVKJHMZWPZNPMVSYWSHXY7C2KBFMVLSQ3D5H44Q4MEROS4H44ZPRNT2\\",
+                  \\"asset\\": {
+                    \\"_switch\\": {
+                      \\"name\\": \\"assetTypeCreditAlphanum4\\",
+                      \\"value\\": 1
+                    },
+                    \\"_arm\\": \\"alphaNum4\\",
+                    \\"_value\\": {
+                      \\"assetCode\\": {
+                        \\"type\\": \\"Buffer\\",
+                        \\"data\\": [
+                          68,
+                          82,
+                          65,
+                          0
+                        ]
+                      },
+                      \\"issuer\\": \\"GCJKSAQECBGSLPQWAU7ME4LVQVZ6IDCNUA5NVTPPCUWZWBN5UBFMXZ53\\"
+                    }
+                  },
+                  \\"amount\\": \\"6300000\\"
+                }
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                71,
+                163,
+                233,
+                168
+              ]
+            },
+            \\"signature\\": \\"S3cBebLEWmTyWN+z1cdZaTsY1Vw4Wc55x5AHX1BrM3UxlqsPI8LU0GlssjVdsP1qSN9cnzwJs5EvftpVpXsQDw==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GA33VQ22D6U2LEQAENU5VVAP3CP6GHZ2RKABNGJMTGCXVBPPM6Z7DRQB\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 26,
+            \\"high\\": 19421958,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"accountMerge\\",
+                  \\"value\\": 8
+                },
+                \\"_arm\\": \\"destination\\",
+                \\"_value\\": \\"GDVGJVII36PKGWBLSHJVI4UFSURCGG53E3M4AIYTIA3CGQJ7VT3KRO3O\\"
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                239,
+                103,
+                179,
+                241
+              ]
+            },
+            \\"signature\\": \\"gsk06jYm5GLx37qOvlGUldLqFGkI+RZcPGaXfZeRp3XhMk3hqiqlhX4QfhjZGvoqhCFxFBAu2pK4DRP8vfQgBQ==\\"
+          }
+        ]
+      },
+      {
+        \\"tx\\": {
+          \\"sourceAccount\\": \\"GBSQ7WNNXTMUARV3VCG6Y4J3KL33AABNVFZGMJZVHTMVW5Z4XR47VMFW\\",
+          \\"fee\\": 100,
+          \\"seqNum\\": {
+            \\"low\\": 81,
+            \\"high\\": 18632653,
+            \\"unsigned\\": false
+          },
+          \\"operations\\": [
+            {
+              \\"body\\": {
+                \\"_switch\\": {
+                  \\"name\\": \\"accountMerge\\",
+                  \\"value\\": 8
+                },
+                \\"_arm\\": \\"destination\\",
+                \\"_value\\": \\"GDVGJVII36PKGWBLSHJVI4UFSURCGG53E3M4AIYTIA3CGQJ7VT3KRO3O\\"
+              }
+            }
+          ],
+          \\"ext\\": {
+            \\"_switch\\": 0,
+            \\"_arm\\": {},
+            \\"_armType\\": {}
+          }
+        },
+        \\"signatures\\": [
+          {
+            \\"hint\\": {
+              \\"type\\": \\"Buffer\\",
+              \\"data\\": [
+                60,
+                188,
+                121,
+                250
+              ]
+            },
+            \\"signature\\": \\"ixexuJ4eYiJCt+jm0B34n0v0KDc2L9yM2+wMPC+PfDtY+ruGThbupj9EskkhZ+72kdxjsigkMstZWJBquF52CA==\\"
+          }
+        ]
+      }
+    ]
+  },
+  \\"ext\\": {
+    \\"_switch\\": 0,
+    \\"_arm\\": {},
+    \\"_armType\\": {}
+  }
+}"
+`;
