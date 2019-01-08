@@ -2,17 +2,7 @@ const {readFileSync} = require(`fs`)
 const {gunzipSync} = require(`zlib`)
 
 const SmartBuffer = require(`smart-buffer`).SmartBuffer
-const {xdr, StrKey} = require(`stellar-base`)
-
-const ASSET_CODE_TYPES = [`assetCode`, `assetCode4`, `assetCode12`]
-const AMOUNT_TYPES = [
-  `amount`,
-  `startingBalance`,
-  `sendMax`,
-  `destAmount`,
-  `limit`,
-]
-const HEX_HASH_TYPES = [`hash`, `previousLedgerHash`, `txSetHash`]
+const {xdr, Operation, StrKey} = require(`stellar-base`)
 
 /**
  * For a given .xdr.gz file this will return an input Buffer to the
@@ -43,65 +33,99 @@ const xdrToObject = (buffer, xdrType) => {
     throw new Error(`Input XDR could not be parsed`)
   }
 
-  record = convertRawTypes(record)
+  if (xdrType === `TransactionHistoryEntry`) {
+    record = fromXDRTransactions(record)
+  } else if (xdrType === `LedgerHeaderHistoryEntry`) {
+    record = fromXDRLedger(record)
+  }
 
   return record
 }
 
 /**
- * Walk through the object converting raw types like Buffer dumps to readable/queryable types.
+ * Walk through the list of transactions and the list of operations inside
+ * each transactions record for a ledger and convert to readable/queryable types.
  *
- * @param {object} obj The XDR object record
- * @return {object} Same object with raw types converted.
+ * @param {object} obj The root of a single ledger record from a transactions XDR file
+ * @return {object} Same object with types converted.
  */
-const convertRawTypes = obj => {
-  if (obj.hasOwnProperty(`_attributes`)) {
-    collapseIntermediaryKey(obj)
-  }
+const fromXDRTransactions = obj => {
+  const rec = {}
 
-  if (obj._arm === `ed25519`) {
-    return ed25519ToPublicKey(obj)
-  }
+  rec.ledgerSeq = obj.ledgerSeq()
 
-  if (ASSET_CODE_TYPES.indexOf(obj._arm) !== -1) {
-    return assetCodeToString(obj)
-  }
+  const txSet = obj.txSet()
+  rec.previousLedgerHash = txSet.previousLedgerHash().toString(`hex`)
 
-  AMOUNT_TYPES.forEach(key => {
-    if (obj.hasOwnProperty(key)) {
-      // store as string for now - can convert this to long on postgres import? perf impact of CAST() in SQL?
-      // an alternative is to use BigNumber.js here too ...
-      obj[key] = obj[key].toString()
-    }
-  })
+  rec.transactions = []
+  obj
+    .txSet()
+    .txes()
+    .forEach(txObj => {
+      const tx = txObj.tx()
+      const txRec = {}
 
-  HEX_HASH_TYPES.forEach(key => {
-    if (obj.hasOwnProperty(key)) {
-      obj[key] = obj[key].toString(`hex`)
-    }
-  })
+      txRec.fee = tx.fee()
+      txRec.seqNum = tx.seqNum().toString()
+      txRec.sourceAccount = StrKey.encodeEd25519PublicKey(
+        tx.sourceAccount().value()
+      )
 
-  if (obj.hasOwnProperty(`signature`)) {
-    obj.signature = obj.signature.toString(`base64`)
-  }
+      txRec.memo = memoXDRToTypeValueObject(tx.memo())
+      if (txRec.memo.type === `memoNone`) delete txRec.memo
 
-  if (obj.hasOwnProperty(`memo`) && typeof obj.memo.switch === `function`) {
-    const type = obj.memo.switch().name
-    const value = obj.memo.value()
-    if (value) {
-      obj.memo = {type, value: value.toString()}
-    } else {
-      delete obj.memo // remove memoNone's completely
-    }
-  }
+      txRec.operations = []
+      tx.operations().forEach(opObj => {
+        txRec.operations.push(Operation.fromXDRObject(opObj))
+      })
 
-  Object.keys(obj).forEach(k => {
-    if (typeof obj[k] === `object`) {
-      obj[k] = convertRawTypes(obj[k])
-    }
-  })
+      rec.transactions.push(txRec)
+    })
 
-  return obj
+  return rec
+}
+
+/**
+ * Transform a record from a XDR Ledger file and convert to readable/queryable types.
+ *
+ * @param {object} obj The root of a single ledger record from a ledger XDR file
+ * @return {object} Same object with types converted.
+ */
+const fromXDRLedger = obj => {
+  const header = obj.header()
+
+  const rec = {}
+
+  rec.ledgerSeq = header.ledgerSeq()
+  rec.hash = obj.hash().toString(`hex`)
+  rec.baseFee = header.baseFee()
+  rec.baseReserve = header.baseReserve()
+  rec.maxTxSetSize = header.maxTxSetSize()
+  rec.ledgerVersion = header.ledgerVersion()
+  ;[`feePool`, `idPool`, `totalCoins`].forEach(
+    key => (rec[key] = header[key]().toString())
+  )
+  rec.txSetResultHash = header.txSetResultHash().toString(`hex`)
+  rec.closeTime = Number(
+    header
+      .scpValue()
+      .closeTime()
+      .toString()
+  )
+
+  return rec
+}
+
+/**
+ * Takes the XDR object for a memo and returns a simple object with type and value properties.
+ */
+const memoXDRToTypeValueObject = obj => {
+  const type = obj.switch().name
+  let value
+  if (type === `memoHash`) value = obj.value().toString(`hex`)
+  else if (type === `memoText`) value = obj.value().toString()
+  else value = obj.value()
+  return {type, value}
 }
 
 /**
@@ -113,28 +137,8 @@ const ed25519ToPublicKey = obj => {
   )
 }
 
-/**
- * Collapses out an unwanted intermediary properties.
- *
- * eg. You have {a:{_props:{c: 1}}} but you want {a:{c:1}}.
- */
-const collapseIntermediaryKey = obj => {
-  Object.assign(obj, obj._attributes)
-  delete obj._attributes
-  return obj
-}
-
-/**
- * Converts an assetCode[4|12] record to a string
- */
-const assetCodeToString = obj => {
-  return obj._value.toString().replace(`\u0000`, ``)
-}
-
 module.exports = {
   ed25519ToPublicKey,
-  collapseIntermediaryKey,
-  convertRawTypes,
   xdrFileToBuffer,
   xdrToObject,
 }

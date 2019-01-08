@@ -36,16 +36,33 @@ class DB {
     return this.dbClient.query(`ROLLBACK`)
   }
 
-  storeRecords(records) {
+  storeTransactionsRecords(records) {
     return Promise.all(
       records.map(record =>
         this.dbClient.query(
           `INSERT INTO transactions (ledger_sequence, data) VALUES ($1, $2)`,
-          [record[`_attributes`].ledgerSeq, record]
+          [record.ledgerSeq, record]
         )
       )
     ).catch(err => {
-      console.error(`storeRecords failure: ${err}`)
+      console.error(
+        `storeTransactionsRecords failure (ledgers: ${records[0].ledgerSeq}:${
+          records[records.length - 1].ledgerSeq
+        }): ${err}: ${err.stack}`
+      )
+    })
+  }
+
+  storeLedgerRecords(records) {
+    return Promise.all(
+      records.map(record =>
+        this.dbClient.query(
+          `INSERT INTO ledger (ledger_sequence, data) VALUES ($1, $2)`,
+          [record.ledgerSeq, record]
+        )
+      )
+    ).catch(err => {
+      console.error(`storeLedgerRecords failure: ${err}`)
     })
   }
 }

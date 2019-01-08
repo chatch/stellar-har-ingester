@@ -1,12 +1,7 @@
 const path = require(`path`)
 
 const HAR = require(`./har`)
-const {
-  ed25519ToPublicKey,
-  collapseIntermediaryKey,
-  xdrFileToBuffer,
-  xdrToObject,
-} = require(`./xdr`)
+const {ed25519ToPublicKey, xdrFileToBuffer, xdrToObject} = require(`./xdr`)
 
 const TEST_DATA_ROOT = path.join(process.cwd(), `src`, `__data__`)
 const har = new HAR(TEST_DATA_ROOT)
@@ -87,11 +82,4 @@ test(`ed25519ToPublicKey`, () => {
       },
     })
   ).toEqual(`GCNP7JE6KR5CKHMVVFTZJUSP7ALAXWP62SK6IMIY4IF3JCHEZKBJKDZF`)
-})
-
-test(`collapseIntermediaryKey`, () => {
-  expect(collapseIntermediaryKey({a: 1, _attributes: {c: 1}})).toEqual({
-    a: 1,
-    c: 1,
-  })
 })

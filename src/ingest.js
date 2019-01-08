@@ -32,7 +32,7 @@ if (program.type) {
   }
   fileTypes = [program.type]
 } else {
-  fileTypes = Object.keys(HAR.fileTypes)
+  fileTypes = [HAR.fileTypes.ledger, HAR.fileTypes.transactions]
 }
 
 let fromLedger
@@ -58,10 +58,6 @@ console.log(
 
 const dryRun = program.dryrun === true
 
-// TODO: ingest all types in list. for now do the first one
-const fileType = fileTypes[0]
-
-const xdrType = HAR.fileTypeToXDRType[fileType]
 const checkpoints = HAR.checkpointsForRange(fromLedger, toLedger)
 console.log(`Checkpoint ledgers to ingest: ${checkpoints}`)
 
@@ -86,24 +82,32 @@ const ingestLedgers = ledgers => {
     .txBegin()
     .then(() =>
       Promise.all(
-        ledgers.map(checkpointLedger => {
-          const xdrFile = har.toHARFilePath(checkpointLedger, fileType)
-          console.log(
-            `reading from ${xdrFile
-              .split(path.sep)
-              .slice(-5)
-              .join(path.sep)}`
-          )
+        ledgers.map(checkpointLedger =>
+          fileTypes.forEach(fileType => {
+            const xdrFile = har.toHARFilePath(checkpointLedger, fileType)
+            console.log(
+              `reading from ${xdrFile
+                .split(path.sep)
+                .slice(-5)
+                .join(path.sep)}`
+            )
 
-          const recs = har.readRecordsFromXdrFile(xdrFile, xdrType)
-          console.log(recs)
+            const xdrType = HAR.fileTypeToXDRType[fileType]
+            const recs = har.readRecordsFromXdrFile(xdrFile, xdrType)
 
-          return !dryRun
-            ? db
-                .storeRecords(recs)
-                .then(() => console.log(`\nFile for ${checkpointLedger} DONE`))
-            : Promise.resolve()
-        })
+            if (dryRun) {
+              return Promise.resolve()
+            }
+
+            const storeFnName = `store${fileType[0].toUpperCase()}${fileType.substring(
+              1
+            )}Records`
+
+            return db[storeFnName](recs).then(() =>
+              console.log(`File for ${checkpointLedger} DONE`)
+            )
+          })
+        )
       )
     )
     .then(() => db.txCommit())
