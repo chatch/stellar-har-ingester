@@ -1,15 +1,20 @@
 {
-  "name": "stellar-har-ingest",
+  "name": "stellar-har-ingester",
   "version": "0.1.0",
-  "description": "Ingest Stellar HAR files to a Database",
+  "description": "Ingest Stellar HAR files to a Store",
+  "license": "Apache-2.0",
+  "repository": "chatch/stellar-har-ingester",
+  "bugs": {
+    "url": "https://github.com/chatch/stellar-har-ingester/issues"
+  },
   "main": "src/ingest.js",
   "scripts": {
     "test": "jest"
   },
   "keywords": [
-    "stellar"
+    "stellar",
+    "archives"
   ],
-  "license": "Apache-2.0",
   "dependencies": {
     "bluebird": "^3.5.3",
     "commander": "^2.19.0",
