@@ -5,6 +5,8 @@ const Promise = require(`bluebird`)
 const DB = require(`./db`)
 const HAR = require(`./har`)
 
+const config = require(`../config`)
+
 program
   .option(`-s, --single [ledger]`, `Import a single ledger`)
   .option(
@@ -77,7 +79,7 @@ while (checkpoints.length > 0) {
 
 let db
 
-const har = new HAR()
+const har = new HAR(config.harRootDir)
 
 const ingestLedgers = ledgers => {
   console.log(`ingestLedgers: ${ledgers[0]} to ${ledgers[ledgers.length - 1]}`)

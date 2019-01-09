@@ -2,7 +2,6 @@ const path = require(`path`)
 const {padStart} = require(`lodash`)
 
 const {xdrFileToBuffer, xdrToObject} = require(`./xdr`)
-const config = require(`../config`)
 
 const isEndOfBufferError = error =>
   error.message && error.message.indexOf(`beyond the bounds`) !== -1
@@ -23,7 +22,7 @@ const readRecord = inBuffer => {
 }
 
 class HAR {
-  constructor(harRootDir = config.harRootDir) {
+  constructor(harRootDir) {
     this.rootDir = harRootDir
   }
 
