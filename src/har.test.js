@@ -43,7 +43,7 @@ test(`toHARFilePath`, () => {
 
 test(`readRecordsFromXdrFile`, () => {
   const har = new HAR(TEST_DATA_ROOT)
-  const file = har.toHARFilePath(917567, HAR.fileTypes.transactions)
+  const file = har.toHARFilePath(21833215, HAR.fileTypes.transactions)
   const records = har.readRecordsFromXdrFile(file, `TransactionHistoryEntry`)
   expect(records.length).toEqual(64)
 })

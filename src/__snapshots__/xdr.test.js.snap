@@ -16,6 +16,704 @@ exports[`xdrToObject ledger 1`] = `
 }"
 `;
 
+exports[`xdrToObject results 1`] = `
+"{
+  \\"ledgerSeq\\": 21833152,
+  \\"results\\": [
+    {
+      \\"hash\\": \\"0df33e0c99f3b5b4bf5a01d1f9ecea65f3fda033c7d0a1bba5c9f4cfd94c45e0\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"accountMerge\\",
+            \\"code\\": 8
+          },
+          \\"result\\": {
+            \\"name\\": \\"accountMergeSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"49b7807f5733013968d7c8c9489ec8d348c8629146fe9177ba9e1bc0362aa77d\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"accountMerge\\",
+            \\"code\\": 8
+          },
+          \\"result\\": {
+            \\"name\\": \\"accountMergeSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"177ae11e1746f65abbf799190c08f36f83520563c25e469a60c98e61ad081ce8\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"payment\\",
+            \\"code\\": 1
+          },
+          \\"result\\": {
+            \\"name\\": \\"paymentSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"6902f0e55169684e83bfb2014af832ca82f93f868455f9c2310c8f95c1948009\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"accountMerge\\",
+            \\"code\\": 8
+          },
+          \\"result\\": {
+            \\"name\\": \\"accountMergeSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"bc069f83c15a04afdc46b4684e7288d969e57881cbb3455cd797541fb5d6c233\\",
+      \\"feeCharged\\": 400,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"changeTrust\\",
+            \\"code\\": 6
+          },
+          \\"result\\": {
+            \\"name\\": \\"changeTrustSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"changeTrust\\",
+            \\"code\\": 6
+          },
+          \\"result\\": {
+            \\"name\\": \\"changeTrustSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"changeTrust\\",
+            \\"code\\": 6
+          },
+          \\"result\\": {
+            \\"name\\": \\"changeTrustSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"changeTrust\\",
+            \\"code\\": 6
+          },
+          \\"result\\": {
+            \\"name\\": \\"changeTrustSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"cbb0b358613180de8c4236f543fde8ce8815c4c4c69be949597f44c2b3bf7eca\\",
+      \\"feeCharged\\": 300,
+      \\"result\\": {
+        \\"name\\": \\"txFailed\\",
+        \\"code\\": -1
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferUnderfunded\\",
+            \\"code\\": -7
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"95061d9de957cb1bc296032c684863d09e4d3a88f12b29dd26bdb9fddb5c6c33\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"b1928699926438eee2d98ebc8c34191d2ee778af8bc5dfd12b74bf0c9e333b3c\\",
+      \\"feeCharged\\": 400,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"04e0041d06194bfc5b98351510f5b99abee6ff50553ca1a64c440ce184eb024b\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"payment\\",
+            \\"code\\": 1
+          },
+          \\"result\\": {
+            \\"name\\": \\"paymentSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"f692a87429bec9a4ab257d12a9fb5c3735d896be2f57965976a05e3bf85f44a3\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"ac61b49ea8b3ec0bdc15c1db34835c9efa508a4ae177261cbb3a3d385293cf08\\",
+      \\"feeCharged\\": 102,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"pathPayment\\",
+            \\"code\\": 2
+          },
+          \\"result\\": {
+            \\"name\\": \\"pathPaymentSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"c11ae3423c66b34676a92783f7e57aab98947065f3063a7f2bcff22b86571533\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"payment\\",
+            \\"code\\": 1
+          },
+          \\"result\\": {
+            \\"name\\": \\"paymentSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"97a097c1d6230a87f17ca46e04e729df6bd9322e7f54c31ca78e2a3fed0fd4b2\\",
+      \\"feeCharged\\": 102,
+      \\"result\\": {
+        \\"name\\": \\"txFailed\\",
+        \\"code\\": -1
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"pathPayment\\",
+            \\"code\\": 2
+          },
+          \\"result\\": {
+            \\"name\\": \\"pathPaymentOverSendmax\\",
+            \\"code\\": -12
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"17ec68227390169e97022aac072101a3c4370bd99e9a10af964199ed073748b3\\",
+      \\"feeCharged\\": 2000,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"30282b713eb09bd0f75008d95a03851237be7965a7a8ef66526db114284378ce\\",
+      \\"feeCharged\\": 500,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        },
+        {
+          \\"type\\": {
+            \\"name\\": \\"manageOffer\\",
+            \\"code\\": 3
+          },
+          \\"result\\": {
+            \\"name\\": \\"manageOfferSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"7996b85be1185a03be9dba1fc5980b6b07231d89789d3ae3ba172a9957525143\\",
+      \\"feeCharged\\": 110,
+      \\"result\\": {
+        \\"name\\": \\"txFailed\\",
+        \\"code\\": -1
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"pathPayment\\",
+            \\"code\\": 2
+          },
+          \\"result\\": {
+            \\"name\\": \\"pathPaymentOverSendmax\\",
+            \\"code\\": -12
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"7fe779a8f0843153eb280b89b68096795eb1855ad1ef04a2026e520c89b69105\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"accountMerge\\",
+            \\"code\\": 8
+          },
+          \\"result\\": {
+            \\"name\\": \\"accountMergeSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"e0a766ac1065a56b94794ddf6bd17213012d65df7375bd1cfb83964032019820\\",
+      \\"feeCharged\\": 102,
+      \\"result\\": {
+        \\"name\\": \\"txFailed\\",
+        \\"code\\": -1
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"pathPayment\\",
+            \\"code\\": 2
+          },
+          \\"result\\": {
+            \\"name\\": \\"pathPaymentOverSendmax\\",
+            \\"code\\": -12
+          }
+        }
+      ]
+    },
+    {
+      \\"hash\\": \\"8f1e74e565f0aa53ab7af67e32a009b1f5265d01fc942901dce0408cf3d5bba8\\",
+      \\"feeCharged\\": 100,
+      \\"result\\": {
+        \\"name\\": \\"txSuccess\\",
+        \\"code\\": 0
+      },
+      \\"operations\\": [
+        {
+          \\"type\\": {
+            \\"name\\": \\"payment\\",
+            \\"code\\": 1
+          },
+          \\"result\\": {
+            \\"name\\": \\"paymentSuccess\\",
+            \\"code\\": 0
+          }
+        }
+      ]
+    }
+  ]
+}"
+`;
+
 exports[`xdrToObject transactions 1`] = `
 "{
   \\"ledgerSeq\\": 21833152,

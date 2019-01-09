@@ -13,7 +13,7 @@ program
   )
   .option(
     `-t, --type [type]`,
-    `Ingest only the given type (transactions, ledger)`
+    `Ingest only the given type (transactions, ledger, results)`
   )
   .option(`-d, --dryrun`, `Read files but don't insert into the database`)
   .parse(process.argv)
@@ -32,7 +32,11 @@ if (program.type) {
   }
   fileTypes = [program.type]
 } else {
-  fileTypes = [HAR.fileTypes.ledger, HAR.fileTypes.transactions]
+  fileTypes = [
+    HAR.fileTypes.ledger,
+    HAR.fileTypes.transactions,
+    HAR.fileTypes.results,
+  ]
 }
 
 let fromLedger

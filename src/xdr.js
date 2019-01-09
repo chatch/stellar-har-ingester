@@ -37,6 +37,8 @@ const xdrToObject = (buffer, xdrType) => {
     record = fromXDRTransactions(record)
   } else if (xdrType === `LedgerHeaderHistoryEntry`) {
     record = fromXDRLedger(record)
+  } else if (xdrType === `TransactionHistoryResultEntry`) {
+    record = fromXDRResults(record)
   }
 
   return record
@@ -117,6 +119,64 @@ const fromXDRLedger = obj => {
 }
 
 /**
+ * Transform a record from a XDR Transaction Results file and convert to readable/queryable types.
+ *
+ * @param {object} obj The root of a single ledger record from a results XDR file
+ * @return {object} Same object with types converted.
+ */
+const fromXDRResults = obj => {
+  const rec = {}
+
+  rec.ledgerSeq = obj.ledgerSeq()
+
+  const results = []
+  const resultsArr = obj.txResultSet().results()
+
+  resultsArr.forEach(txResultRoot => {
+    const txResult = {}
+    txResult.hash = txResultRoot.transactionHash().toString(`hex`)
+    txResult.feeCharged = Number(
+      txResultRoot
+        .result()
+        .feeCharged()
+        .toString()
+    )
+
+    const txResultInner = txResultRoot.result().result()
+    txResult.result = {
+      name: txResultInner.switch().name,
+      code: txResultInner.switch().value,
+    }
+
+    const txResultInnerValue = txResultInner.value()
+    if (txResultInnerValue) {
+      txResult.operations = []
+      txResultInnerValue.forEach(opRoot => {
+        const op = {}
+        const opRec = opRoot.value()
+        if (opRec) {
+          op.type = {name: opRec.switch().name, code: opRec.switch().value}
+
+          const opRes = opRec.value()
+          op.result = {
+            name: opRes.switch().name,
+            code: opRes.switch().value,
+            // TODO: add various result params - values depend on optype ..
+            // value: opRes.value()
+          }
+        }
+        txResult.operations.push(op)
+      })
+    }
+
+    results.push(txResult)
+  })
+  rec.results = results
+
+  return rec
+}
+
+/**
  * Takes the XDR object for a memo and returns a simple object with type and value properties.
  */
 const memoXDRToTypeValueObject = obj => {
@@ -128,17 +188,7 @@ const memoXDRToTypeValueObject = obj => {
   return {type, value}
 }
 
-/**
- * Converts an ed25519 Buffer record to a Stellar public key string.
- */
-const ed25519ToPublicKey = obj => {
-  return StrKey.encodeEd25519PublicKey(
-    Array.isArray(obj._value.data) ? obj._value.data : obj._value
-  )
-}
-
 module.exports = {
-  ed25519ToPublicKey,
   xdrFileToBuffer,
   xdrToObject,
 }

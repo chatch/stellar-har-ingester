@@ -2,6 +2,22 @@ const {Client} = require(`pg`)
 
 const config = require(`../config`)
 
+const storeRecords = (dbClient, table, records) =>
+  Promise.all(
+    records.map(record =>
+      dbClient.query(
+        `INSERT INTO ${table} (ledger_sequence, data) VALUES ($1, $2)`,
+        [record.ledgerSeq, record]
+      )
+    )
+  ).catch(err => {
+    console.error(
+      `storeRecords(${table}) failure: (ledgers: ${records[0].ledgerSeq}:${
+        records[records.length - 1].ledgerSeq
+      }): ${err}: ${err.stack}`
+    )
+  })
+
 class DB {
   /**
    * Get a new connected DB instance.
@@ -37,33 +53,15 @@ class DB {
   }
 
   storeTransactionsRecords(records) {
-    return Promise.all(
-      records.map(record =>
-        this.dbClient.query(
-          `INSERT INTO transactions (ledger_sequence, data) VALUES ($1, $2)`,
-          [record.ledgerSeq, record]
-        )
-      )
-    ).catch(err => {
-      console.error(
-        `storeTransactionsRecords failure (ledgers: ${records[0].ledgerSeq}:${
-          records[records.length - 1].ledgerSeq
-        }): ${err}: ${err.stack}`
-      )
-    })
+    return storeRecords(this.dbClient, `transactions`, records)
   }
 
   storeLedgerRecords(records) {
-    return Promise.all(
-      records.map(record =>
-        this.dbClient.query(
-          `INSERT INTO ledger (ledger_sequence, data) VALUES ($1, $2)`,
-          [record.ledgerSeq, record]
-        )
-      )
-    ).catch(err => {
-      console.error(`storeLedgerRecords failure: ${err}`)
-    })
+    return storeRecords(this.dbClient, `ledger`, records)
+  }
+
+  storeResultsRecords(records) {
+    return storeRecords(this.dbClient, `results`, records)
   }
 }
 
