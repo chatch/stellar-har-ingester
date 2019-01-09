@@ -81,50 +81,52 @@ let db
 
 const har = new HAR(config.harRootDir)
 
-const ingestLedgers = ledgers => {
+const ingestLedgers = async ledgers => {
   console.log(`ingestLedgers: ${ledgers[0]} to ${ledgers[ledgers.length - 1]}`)
 
-  return db
-    .txBegin()
-    .then(() =>
-      Promise.all(
-        ledgers.map(checkpointLedger =>
-          fileTypes.forEach(fileType => {
-            const xdrFile = har.toHARFilePath(checkpointLedger, fileType)
-            console.log(
-              `reading from ${xdrFile
-                .split(path.sep)
-                .slice(-5)
-                .join(path.sep)}`
-            )
-
-            const xdrType = HAR.fileTypeToXDRType[fileType]
-            const recs = har.readRecordsFromXdrFile(xdrFile, xdrType)
-
-            if (dryRun) {
-              return Promise.resolve()
-            }
-
-            const storeFnName = `store${fileType[0].toUpperCase()}${fileType.substring(
-              1
-            )}Records`
-
-            return db[storeFnName](recs).then(() =>
-              console.log(`File for ${checkpointLedger} DONE`)
-            )
-          })
+  if (!dryRun) await db.txBegin()
+  return Promise.all(
+    ledgers.map(checkpointLedger =>
+      fileTypes.forEach(fileType => {
+        const xdrFile = har.toHARFilePath(checkpointLedger, fileType)
+        console.log(
+          `reading from ${xdrFile
+            .split(path.sep)
+            .slice(-5)
+            .join(path.sep)}`
         )
-      )
+
+        const xdrType = HAR.fileTypeToXDRType[fileType]
+        const recs = har.readRecordsFromXdrFile(xdrFile, xdrType)
+
+        if (dryRun) {
+          return Promise.resolve()
+        }
+
+        const storeFnName = `store${fileType[0].toUpperCase()}${fileType.substring(
+          1
+        )}Records`
+
+        return db[storeFnName](recs).then(() =>
+          console.log(`File for ${checkpointLedger} DONE`)
+        )
+      })
     )
-    .then(() => db.txCommit())
+  ).then(() => {
+    if (db) db.txCommit()
+  })
 }
 
-const main = () =>
-  DB.getInstance()
-    .then(dbInst => (db = dbInst))
-    .then(() => Promise.each(checkpointChunks, ingestLedgers))
+const main = async () => {
+  if (!dryRun) {
+    await DB.getInstance().then(dbInst => (db = dbInst))
+  }
+  return Promise.each(checkpointChunks, ingestLedgers)
     .then(() => console.log(`\nALL DONE\n`))
     .catch(err => console.error(err))
-    .finally(() => db.close())
+    .finally(() => {
+      if (db) db.close()
+    })
+}
 
 main()
