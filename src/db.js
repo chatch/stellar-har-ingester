@@ -37,7 +37,7 @@ class DB {
   }
 
   close() {
-    this.dbClient.end()
+    return this.dbClient.end()
   }
 
   txBegin() {

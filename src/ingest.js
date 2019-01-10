@@ -1,6 +1,5 @@
 const program = require(`commander`)
 const path = require(`path`)
-const Promise = require(`bluebird`)
 
 const DB = require(`./db`)
 const HAR = require(`./har`)
@@ -84,7 +83,10 @@ const har = new HAR(config.harRootDir)
 const ingestLedgers = async ledgers => {
   console.log(`ingestLedgers: ${ledgers[0]} to ${ledgers[ledgers.length - 1]}`)
 
-  if (!dryRun) await db.txBegin()
+  if (!dryRun) {
+    await db.txBegin()
+  }
+
   return Promise.all(
     ledgers.map(checkpointLedger =>
       fileTypes.forEach(fileType => {
@@ -99,8 +101,8 @@ const ingestLedgers = async ledgers => {
         const xdrType = HAR.fileTypeToXDRType[fileType]
         const recs = har.readRecordsFromXdrFile(xdrFile, xdrType)
 
-        if (dryRun) {
-          return Promise.resolve()
+        if (dryRun === true) {
+          return
         }
 
         const storeFnName = `store${fileType[0].toUpperCase()}${fileType.substring(
@@ -112,21 +114,25 @@ const ingestLedgers = async ledgers => {
         )
       })
     )
-  ).then(() => {
-    if (db) db.txCommit()
-  })
+  ).then(() => (db ? db.txCommit() : undefined))
 }
 
 const main = async () => {
-  if (!dryRun) {
-    await DB.getInstance().then(dbInst => (db = dbInst))
+  if (dryRun === false) {
+    db = await DB.getInstance()
   }
-  return Promise.each(checkpointChunks, ingestLedgers)
-    .then(() => console.log(`\nALL DONE\n`))
-    .catch(err => console.error(err))
-    .finally(() => {
-      if (db) db.close()
-    })
+
+  try {
+    // TODO: run N batches in parallel at a time (for now run one at a time)
+    for (const ledgerSeqArr of checkpointChunks) {
+      await ingestLedgers(ledgerSeqArr)
+    }
+    console.log(`\nALL DONE\n`)
+  } catch (err) {
+    console.error(`Failure ingesting: ${err}`)
+  } finally {
+    if (db) db.close()
+  }
 }
 
 main()
