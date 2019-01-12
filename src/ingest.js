@@ -110,7 +110,7 @@ const ingestLedgers = async ledgers => {
         )}Records`
 
         return db[storeFnName](recs).then(() =>
-          console.log(`File for ${checkpointLedger} DONE`)
+          console.log(`File for ${checkpointLedger}:${fileType} DONE`)
         )
       })
     )
