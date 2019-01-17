@@ -70,7 +70,7 @@ const archiveSync = async (
   return new Promise(resolve => {
     child.on(`exit`, function(code, signal) {
       console.log(
-        `child process exited with ` + `code ${code} and signal ${signal}`
+        `\nchild process exited with ` + `code ${code} and signal ${signal}\n`
       )
       resolve(code)
     })

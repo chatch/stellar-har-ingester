@@ -1,6 +1,5 @@
 const program = require(`commander`)
 const fs = require(`fs`)
-const schedule = require(`node-schedule`)
 
 const HAR = require(`./har`)
 
@@ -56,24 +55,30 @@ const har = new HAR(
 
 const log = msg => console.log(`${new Date().toISOString()}: ${msg}`)
 
+let isRunning = false
 const syncOneTime = async () => {
-  log(`Sync started ...`)
+  // no parallel runs
+  if (isRunning) return
+
+  log(`Sync started ...\n`)
+  isRunning = true
   const exitCode = await har.sync()
-  log(`\nSync finished. exit: ${exitCode}\n`)
+  isRunning = false
+  log(`Sync finished. exit: ${exitCode}\n`)
+
   return exitCode
 }
 
 ;(async () => {
+  const exitCode = await syncOneTime()
+
   // Run one time only if exit arg provided
   if (exit) {
-    const exitCode = await syncOneTime()
     process.exit(exitCode)
   }
 
   // Setup a recurring schedule to continue syncing
   const scheduleMins = 5
   log(`Schedule recurring sync job to run every ${scheduleMins} minutes\n`)
-  schedule.scheduleJob({rule: `* */${scheduleMins} * * * *`}, () =>
-    syncOneTime().then(() => console.log(`done in job schedule too`))
-  )
+  setInterval(async () => await syncOneTime(), scheduleMins * 60 * 1000)
 })()
