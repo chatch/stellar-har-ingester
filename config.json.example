@@ -1,0 +1,25 @@
+{
+  "archivistToolPath": "/opt/stellar/bin/stellar-archivist",
+  "live": {
+    "harLocalPath": "/opt/stellar/har/live",
+    "harRemotePath": "http://history.stellar.org/prd/core-live/core_live_001",
+    "db": {
+      "host": "172.17.0.2",
+      "port": 5432,
+      "database": "stellar-live",
+      "user": "stellar",
+      "password": "CHANGEME"
+    }
+  },
+  "testnet": {
+    "harLocalPath": "/opt/stellar/har/testnet",
+    "harRemotePath": "http://history.stellar.org/prd/core-testnet/core_testnet_001",
+    "db": {
+      "host": "172.17.0.2",
+      "port": 5432,
+      "database": "stellar-testnet",
+      "user": "stellar",
+      "password": "CHANGEME"
+    }
+  }
+}

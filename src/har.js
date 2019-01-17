@@ -1,3 +1,4 @@
+const childProcess = require(`child_process`)
 const path = require(`path`)
 const {padStart} = require(`lodash`)
 
@@ -21,9 +22,66 @@ const readRecord = inBuffer => {
   return recordBuffer
 }
 
+/**
+ * Show the status for an archive at a given path.
+ *
+ * Status is just the ledger sequence number of the latest ledger in the archive.
+ *
+ * @param {string} archivistPath Path to the stellar-archivist tool
+ * @param {string} harPath Archive path - either local (eg. file://har-files)
+ *                          or remote (eg. http://some.s3.bucket)
+ * @return {number} Latest ledger sequence for the archive.
+ */
+const archiveStatus = (archivistPath, harPath) => {
+  const cmdOutStr = childProcess
+    .execFileSync(archivistPath, [`status`, `file://${harPath}`])
+    .toString()
+  const ledgerRE = /.*CurrentLedger: (\d*) /
+  const match = ledgerRE.exec(cmdOutStr)
+  return Number(match[1])
+}
+
+/**
+ * Synchronize local archive with the remote archive downloading any newer files.
+ *
+ * @param {string} archivistPath Path to the stellar-archivist tool
+ * @param {string} harLocalPath Local archive path (eg. file://har-files)
+ * @param {string} harRemotePath Remote archive path (eg. http://some.s3.bucket)
+ * @param {string} fromLedger Ledger to start syncing from
+ * @return {boolean} Success - true|false
+ */
+const archiveSync = async (
+  archivistPath,
+  harLocalPath,
+  harRemotePath,
+  fromLedger
+) => {
+  const child = childProcess.spawn(archivistPath, [
+    `--low`,
+    fromLedger,
+    `mirror`,
+    harRemotePath,
+    `file://${harLocalPath}`,
+  ])
+
+  child.stdout.pipe(process.stdout)
+  child.stderr.pipe(process.stderr)
+
+  return new Promise(resolve => {
+    child.on(`exit`, function(code, signal) {
+      console.log(
+        `child process exited with ` + `code ${code} and signal ${signal}`
+      )
+      resolve(code)
+    })
+  })
+}
+
 class HAR {
-  constructor(harRootDir) {
-    this.rootDir = harRootDir
+  constructor(harLocalPath, harRemotePath, archivistToolPath) {
+    this.harLocalPath = harLocalPath
+    this.harRemotePath = harRemotePath
+    this.archivist = archivistToolPath
   }
 
   static toLedgerHex(ledgerNum) {
@@ -32,7 +90,7 @@ class HAR {
 
   /**
    * History files are stored at ledger numbers 1 less than multiples of 64.
-   * @see here for details: https://github.com/stellar/stellar-core/blob/master/docs/history.md
+   * @see details: https://github.com/stellar/stellar-core/blob/master/docs/history.md
    *
    * This routine determines the ledger number of the checkpoint file that
    * details of the given ledgerNum are in.
@@ -68,10 +126,32 @@ class HAR {
     return checkpointHashes
   }
 
+  statusLocal() {
+    return archiveStatus(this.archivist, this.harLocalPath)
+  }
+
+  statusRemote() {
+    return archiveStatus(this.archivist, this.harRemotePath)
+  }
+
+  /**
+   * Sync local archive with the remote archive
+   * @returns {boolean} Success - true|false
+   */
+  sync() {
+    const fromLedger = this.statusLocal()
+    return archiveSync(
+      this.archivist,
+      this.harLocalPath,
+      this.harRemotePath,
+      fromLedger
+    )
+  }
+
   toHARFilePath(ledgerNum, fileType) {
     const ledgerHex = HAR.toLedgerHex(ledgerNum)
     return path.join(
-      this.rootDir,
+      this.harLocalPath,
       fileType,
       ledgerHex.slice(0, 2),
       ledgerHex.slice(2, 4),

@@ -1,5 +1,6 @@
 const path = require(`path`)
 const HAR = require(`./har`)
+const config = require(`../config.json.example`)
 
 const TEST_DATA_ROOT = path.join(process.cwd(), `src`, `__data__`)
 
@@ -46,4 +47,24 @@ test(`readRecordsFromXdrFile`, () => {
   const file = har.toHARFilePath(21833215, HAR.fileTypes.transactions)
   const records = har.readRecordsFromXdrFile(file, `TransactionHistoryEntry`)
   expect(records.length).toEqual(64)
+})
+
+test(`statusLocal`, () => {
+  const har = new HAR(
+    TEST_DATA_ROOT,
+    config.testnet.harRemotePath,
+    config.archivistToolPath
+  )
+  const ledger = har.statusLocal()
+  expect(ledger).toEqual(1741631) // from testdata in __data__
+})
+
+test(`statusRemote`, () => {
+  const har = new HAR(
+    config.live.harLocalPath,
+    config.live.harRemotePath,
+    config.archivistToolPath
+  )
+  const ledger = har.statusRemote()
+  expect(ledger).toBeGreaterThan(22000000) // near latest ledger at time of writing test
 })
