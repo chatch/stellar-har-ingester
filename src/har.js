@@ -34,7 +34,7 @@ const readRecord = inBuffer => {
  */
 const archiveStatus = (archivistPath, harPath) => {
   const cmdOutStr = childProcess
-    .execFileSync(archivistPath, [`status`, `file://${harPath}`])
+    .execFileSync(archivistPath, [`status`, harPath])
     .toString()
   const ledgerRE = /.*CurrentLedger: (\d*) /
   const match = ledgerRE.exec(cmdOutStr)
@@ -70,7 +70,8 @@ const archiveSync = async (
   return new Promise(resolve => {
     child.on(`exit`, function(code, signal) {
       console.log(
-        `\nchild process exited with ` + `code ${code} and signal ${signal}\n`
+        `\nstellar-archivist process exited with ` +
+          `code ${code} and signal ${signal}\n`
       )
       resolve(code)
     })
@@ -127,7 +128,7 @@ class HAR {
   }
 
   statusLocal() {
-    return archiveStatus(this.archivist, this.harLocalPath)
+    return archiveStatus(this.archivist, `file://${this.harLocalPath}`)
   }
 
   statusRemote() {

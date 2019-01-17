@@ -1,8 +1,13 @@
+const {readFileSync} = require(`fs`)
 const path = require(`path`)
 const HAR = require(`./har`)
-const config = require(`../config.json.example`)
 
-const TEST_DATA_ROOT = path.join(process.cwd(), `src`, `__data__`)
+const SRC_DIR = path.join(process.cwd(), `src`)
+const TEST_DATA_ROOT = path.join(SRC_DIR, `__data__`)
+
+const config = JSON.parse(
+  readFileSync(path.join(SRC_DIR, `..`, `config.json.example`)).toString()
+)
 
 test(`toLedgerHex`, () => {
   expect(HAR.toLedgerHex(0)).toEqual(`00000000`)
