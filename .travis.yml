@@ -6,8 +6,6 @@ node_js:
 install:
   - npm install
   - curl -L -o /tmp/archivist.tgz https://github.com/stellar/go/releases/download/snapshots/stellar-archivist-snapshot-linux-amd64.tar.gz && cd /tmp && tar xf archivist.tgz && cd -
-cache:
-  directories:
-    - node_modules
+cache: npm
 script:
   - npm test
