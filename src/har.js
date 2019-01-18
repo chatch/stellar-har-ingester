@@ -1,3 +1,4 @@
+const fs = require(`fs`)
 const childProcess = require(`child_process`)
 const path = require(`path`)
 const {padStart} = require(`lodash`)
@@ -56,6 +57,10 @@ const archiveSync = async (
   harRemotePath,
   fromLedger
 ) => {
+  if (!fs.existsSync(archivistPath)) {
+    throw new Error(`stellar-archivist not at given path: ${archivistPath}`)
+  }
+
   const child = childProcess.spawn(archivistPath, [
     `--low`,
     fromLedger,

@@ -54,7 +54,9 @@ const har = new HAR(
   config.archivistToolPath
 )
 
-const log = msg => console.log(`${new Date().toISOString()}: ${msg}`)
+const datedMsg = msg => `${new Date().toISOString()}: ${msg}`
+const log = msg => console.log(datedMsg(msg))
+const logError = msg => console.error(datedMsg(msg))
 
 let isRunning = false
 const syncOneTime = async () => {
@@ -63,7 +65,15 @@ const syncOneTime = async () => {
 
   log(`Sync started ...\n`)
   isRunning = true
-  const exitCode = await har.sync()
+
+  let exitCode
+  try {
+    exitCode = await har.sync()
+  } catch (err) {
+    logError(`sync failed: ${err}`)
+    exitCode = -1
+  }
+
   isRunning = false
   log(`Sync finished. exit: ${exitCode}\n`)
 
