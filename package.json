@@ -1,6 +1,6 @@
 {
   "name": "stellar-har-ingester",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Ingest Stellar HAR files to a Store",
   "license": "Apache-2.0",
   "repository": "chatch/stellar-har-ingester",
