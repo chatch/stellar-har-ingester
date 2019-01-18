@@ -9,6 +9,11 @@ const config = JSON.parse(
   readFileSync(path.join(SRC_DIR, `..`, `config.json.example`)).toString()
 )
 
+const isTravis = process.env.TRAVIS === `true`
+const archivistToolPath = isTravis
+  ? `/tmp/stellar-archivist-snapshot-linux-amd64/stellar-archivist`
+  : config.archivistToolPath
+
 test(`toLedgerHex`, () => {
   expect(HAR.toLedgerHex(0)).toEqual(`00000000`)
   expect(HAR.toLedgerHex(1)).toEqual(`00000001`)
@@ -58,7 +63,7 @@ test(`statusLocal`, () => {
   const har = new HAR(
     TEST_DATA_ROOT,
     config.testnet.harRemotePath,
-    config.archivistToolPath
+    archivistToolPath
   )
   const ledger = har.statusLocal()
   expect(ledger).toEqual(1741631) // from testdata in __data__
@@ -68,7 +73,7 @@ test(`statusRemote`, () => {
   const har = new HAR(
     config.live.harLocalPath,
     config.live.harRemotePath,
-    config.archivistToolPath
+    archivistToolPath
   )
   const ledger = har.statusRemote()
   expect(ledger).toBeGreaterThan(22000000) // near latest ledger at time of writing test
