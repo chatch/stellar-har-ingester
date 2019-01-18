@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const fs = require(`fs`)
 const program = require(`commander`)
 const path = require(`path`)
 
@@ -29,7 +30,10 @@ const parseArgs = program => {
     showHelp(`Specify network 'live' or 'testnet' with --network.`)
   }
 
-  if (program.single && program.range) {
+  if (
+    (program.single && program.range) ||
+    (!program.single && !program.range)
+  ) {
     showHelp(
       `Specify either a single ledger (--single) OR a range (--range) but not both.`
     )
@@ -41,8 +45,8 @@ const parseArgs = program => {
 
   const fileTypes = program.type ? [program.type] : defaultFileTypes
 
-  const single = Number(single)
-  if (program.single && single > 0 == false) {
+  const single = Number(program.single)
+  if (single && single > 0 == false) {
     showHelp(`Single ledger argument must be a valid ledger sequence.`)
   }
 
@@ -58,7 +62,7 @@ const parseArgs = program => {
 
   return {
     dryRun: program.dryrun === true,
-    config: program.config,
+    configFile: program.config,
     network: program.network,
     fileTypes,
     single,
@@ -66,7 +70,12 @@ const parseArgs = program => {
   }
 }
 
-const init = ({config, network, fileTypes, single, range, dryRun}) => {
+const init = ({configFile, network, fileTypes, single, range, dryRun}) => {
+  console.log(configFile)
+
+  const config = JSON.parse(fs.readFileSync(configFile).toString())
+  console.log(JSON.stringify(config, null, 2))
+
   const har = new HAR(
     config[network].harLocalPath,
     config[network].harRemotePath,
@@ -84,6 +93,8 @@ const init = ({config, network, fileTypes, single, range, dryRun}) => {
 
   return {
     har,
+    config,
+    network,
     dryRun,
     fileTypes,
     fromLedger: from,
@@ -110,7 +121,9 @@ program
   .parse(process.argv)
 
 const args = parseArgs(program)
-const {har, dryRun, fileTypes, fromLedger, toLedger} = init(args)
+const {har, config, network, dryRun, fileTypes, fromLedger, toLedger} = init(
+  args
+)
 
 console.log(
   `Importing ${fromLedger} to ${toLedger} for types [${fileTypes}] ...\n`
@@ -170,7 +183,7 @@ const ingestLedgers = async ledgers => {
 
 const main = async () => {
   if (dryRun === false) {
-    db = await DB.getInstance()
+    db = await DB.getInstance(config[network].db)
   }
 
   try {

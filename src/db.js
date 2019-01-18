@@ -1,7 +1,5 @@
 const {Client} = require(`pg`)
 
-const config = require(`../config`)
-
 const storeRecords = (dbClient, table, records) =>
   Promise.all(
     records.map(record =>
@@ -21,15 +19,16 @@ const storeRecords = (dbClient, table, records) =>
 class DB {
   /**
    * Get a new connected DB instance.
+   * @param dbConfig Object containing db connect properties - host, port, database, user, password
    * @return Promise<DB>
    */
-  static getInstance() {
+  static getInstance(dbConfig) {
     const db = new DB()
-    return db.init().then(() => db)
+    return db.init(dbConfig).then(() => db)
   }
 
-  init() {
-    this.dbClient = new Client(config.db)
+  init(dbConfig) {
+    this.dbClient = new Client(dbConfig)
     return this.dbClient
       .connect()
       .then(() => console.log(`\nDB connected!\n`))
